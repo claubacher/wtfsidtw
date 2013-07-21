@@ -14,8 +14,12 @@ class Movie < ActiveRecord::Base
   end
 
   def trailer
-    data = open('http://simpleapi.traileraddict.com/trailer/' + title.downcase.gsub(" ", "-") + '/trailer')
-    Hash.from_xml(data.read)["trailers"]["trailer"]["embed_standard"]
+    begin
+      data = open('http://simpleapi.traileraddict.com/trailer/' + title.downcase.gsub(" ", "-") + '/trailer')
+    rescue
+      data = nil
+    end
+    data ? Hash.from_xml(data.read)["trailers"]["trailer"]["embed_standard"] : nil
   end
 
   def photo
