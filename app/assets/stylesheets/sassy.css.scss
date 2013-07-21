@@ -1,0 +1,27 @@
+.landing{
+  width: 50%;
+  margin: 100px auto;
+  font-size: x-large;
+  text-align: center;
+}
+
+.landing input{
+  font-size: x-large;
+  border: none;
+  &:hover{
+    background: yellow;
+  }
+}
+
+.landing a {
+  display: block;
+  text-decoration: none;
+  background: gray;
+  color: black;
+  margin-top: 4px;
+  padding: 8px;
+  &:hover{
+    background: yellow;
+  }
+}
+
