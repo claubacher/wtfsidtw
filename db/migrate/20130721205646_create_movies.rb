@@ -1,5 +1,5 @@
 class CreateMovies < ActiveRecord::Migration
-  def create
+  def change
     create_table :movies do |t|
       t.string :title
       t.string :mpaa_rating
@@ -7,8 +7,7 @@ class CreateMovies < ActiveRecord::Migration
       t.integer :critics_score
       t.integer :audience_score
       t.string :poster
-      t.text :cast
-      t.string :link
+      t.string :cast
 
       t.timestamps
     end

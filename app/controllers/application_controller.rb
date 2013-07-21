@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 	end
 
 	def wtf
-		idea = [Clusterfuck.new, Movie.new].sample
+		idea = [Clusterfuck.new, Movie.all.sample].sample
 		render :partial => "wtf/testing", :locals => { :idea => idea }
 	end
 end
