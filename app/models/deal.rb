@@ -9,32 +9,22 @@ class Deal
     groupon = open('http://api.groupon.com/v2/deals.json?client_id=69481c71e6487f01ac963838804ee201cd5efcc9&division_id=chicago')
     data = JSON.parse(groupon.read)
     deal = data['deals'].sample
-    self.title 
-    self.pitch_html
-    self.deal_url
-    self.redemption_location
-    self.website_url
-    self.large_image_url
-    self.starts_at
-    self.deal_types
-    self.tags
     self.title = deal["title"]
     self.pitch_html = deal["pitchHtml"]
-    self.deal_url = deal["dealURL"]
+    self.deal_url = deal['dealUrl']
     self.redemption_location = deal["redemptionLocation"]
     # self.website_url = deal["merchant"]["ratings"]["websiteUrl"]
     self.large_image_url = deal["largeImageUrl"]
-    self.starts_at = deal["starts_at"]
+    self.starts_at = deal["startAt"]
     self.deal_types = deal["dealTypes"]
     self.tags = deal["tags"]
     self.option_array = []
     deal["options"].each do |option|
-      self.option_array << [option["price"]["amount"], option["price"]["formattedAmount"],option["buyUrl"],option["redemptionLocations"],option["redemptionLocations"]]
+      self.option_array << [option["price"]["amount"], option["price"]["formattedAmount"],option["buyUrl"],option["redemptionLocations"], option['title']]
     end
     self.announcement_title = deal['announcementTitle']
     self.end_date = deal['endAt']
   end
 
 end
-
 
