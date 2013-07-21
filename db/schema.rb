@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130721213252) do
+ActiveRecord::Schema.define(:version => 20130721225538) do
+
+  create_table "concerts", :force => true do |t|
+    t.string "kind"
+    t.string "artists"
+    t.string "location"
+    t.text   "url"
+  end
 
   create_table "deals", :force => true do |t|
     t.string   "location"
