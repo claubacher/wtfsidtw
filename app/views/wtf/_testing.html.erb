@@ -1,6 +1,6 @@
 <%= directions %>
 <%= idea.title %><br>
 <%= image_tag idea.photo %><br>
-<%= idea.description.html_safe if idea.description %>
+<%= idea.description.html_safe if idea.description %><br>
 <%= @trailer.html_safe if @trailer %>
 <%= link_to "Fuck that", wtf_path, class: "wtf_link" %>
