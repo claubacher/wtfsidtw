@@ -23,6 +23,12 @@ class Deal < ActiveRecord::Base
   #   self.announcement_title = deal['announcementTitle']
   #   self.end_date = deal['endAt']
   # end
+  def photo
+    large_image_url
+  end
 
+  def description
+    "<a href='#{deal_url}'>View this deal</a>"
+  end
 end
 
