@@ -7,14 +7,7 @@ require "action_mailer/railtie"
 require "active_resource/railtie"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
-
 require 'open-uri'
-require 'google/api_client'
-require 'trollop'
-
-DEVELOPER_KEY = ENV[YOUTUBE_KEY]
-YOUTUBE_API_SERVICE_NAME = "youtube"
-YOUTUBE_API_VERSION = "v3"
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line

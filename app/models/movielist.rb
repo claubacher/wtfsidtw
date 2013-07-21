@@ -2,7 +2,7 @@ class Movielist
   attr_accessor :movies
 
   def initialize()
-    rt = open('http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=vyfe6wm2adywqh6g6ge8trrt&page_limit=30')
+    rt = open('http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey='+ ENV['RT_KEY'] +'&page_limit=30')
     data = JSON.parse(rt.read)
     data["movies"].each do |movie|
       Movie.create(:title => movie["title"],

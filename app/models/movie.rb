@@ -3,7 +3,7 @@ class Movie < ActiveRecord::Base
 
   def description
     "Rating: " + mpaa_rating + "<br>" +
-    "Runtime: " + runtime.to_s + "<br>" +
+    "Runtime: " + runtime.to_s + " minutes" + "<br>" +
     "Critics' score: " + critics_score.to_s + "<br>" +
     "Audience score: " + audience_score.to_s + "<br>" +
     "Cast: " + cast + "<br>"
@@ -14,7 +14,8 @@ class Movie < ActiveRecord::Base
   end
 
   def trailer
-
+    data = open('http://simpleapi.traileraddict.com/trailer/' + title.downcase.gsub(" ", "-") + '/trailer')
+    Hash.from_xml(data.read)["trailers"]["trailer"]["embed_standard"]
   end
 
   def photo
