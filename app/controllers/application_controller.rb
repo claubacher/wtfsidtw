@@ -3,4 +3,9 @@ class ApplicationController < ActionController::Base
 	def index
 
 	end
+
+	def wtf
+		idea = Clusterfuck.new
+		render :partial => "wtf/testing", :locals => { :idea => idea }
+	end
 end
