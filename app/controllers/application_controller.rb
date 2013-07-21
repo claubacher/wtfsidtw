@@ -5,12 +5,13 @@ class ApplicationController < ActionController::Base
 
 	def wtf
 		# idea = [Clusterfuck.new, Movie.all.sample].sample
-    idea = [Movie.all.sample].sample
+    idea = [Movie.all.sample, Deal.all.sample].sample
     if idea.class == Movie
+      puts idea.title
       directions = "You should see "
-      @trailer = idea.trailer
+      @trailer = idea.trailer if idea.trailer
     elsif idea.class == Deal
-      directions = "You should buy "
+      directions = "You should sign up for "
     end
 		render :partial => "wtf/testing", :locals => { :idea => idea, :directions => directions }
 	end
