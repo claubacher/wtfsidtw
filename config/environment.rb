@@ -7,7 +7,7 @@ GROUPON_KEY = ENV['GROUPON_KEY']
 
 GROUPON_URL = "http://api.groupon.com/v2/deals.json?client_id="+GROUPON_KEY
 
-GROUPON_PARENT_TAGS = ['Arts_and_Entertainment','Beauty_&_Spas','Education','Restaurants','Nightlife']
+GROUPON_PARENT_TAGS = ['Arts and Entertainment','Beauty & Spas','Education','Restaurants','Nightlife']
 
-GROUPON_CHILD_TAGS = ['Golf', 'Martial_Arts','Martial_Arts','Racquetball_Clubs','Rock_Climbing  Health & Fitness
+GROUPON_CHILD_TAGS = ['Golf', 'Martial Arts','Martial Arts','Racquetball Clubs','Rock Climbing  Health & Fitness
 ', 'Skiing', 'Tennis', 'Yoga']
