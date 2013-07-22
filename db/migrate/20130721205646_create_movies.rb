@@ -8,7 +8,7 @@ class CreateMovies < ActiveRecord::Migration
       t.integer :audience_score
       t.string :poster
       t.string :cast
-
+      t.string :link
       t.timestamps
     end
   end

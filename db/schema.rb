@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20130721225538) do
     t.integer  "audience_score"
     t.string   "poster"
     t.string   "cast"
+    t.string   "link"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
