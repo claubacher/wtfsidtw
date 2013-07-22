@@ -1,9 +1,9 @@
 class Deal < ActiveRecord::Base
-  attr_accessible :title, :pitchHtml, :dealUrl, :redemptionLocation, :websiteUrl, :largeImageUrl, :startsAt, :dealTypes, :tags, :price, :buyUrl, :location, :geolocation, :address, :startDate, :endDate, :optionArray, :announcementTitle
+  attr_accessible :title, :pitchHtml, :dealUrl, :redemptionLocation, :websiteUrl, :large_image_url, :startsAt, :dealTypes, :tags, :price, :buyUrl, :location, :geolocation, :address, :startDate, :endDate, :optionArray, :announcementTitle
   attr_reader :data
 
   def photo
-    largeImageUrl
+    large_image_url
   end
 
   def description
