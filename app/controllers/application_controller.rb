@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
 	def wtf
 		# idea = [Clusterfuck.new, Movie.all.sample].sample
-    idea = [Movie.all.sample, Deal.all.sample].sample
+    idea = [Movie.all.sample, Deal.all.sample, Concert.all.sample].sample
     if idea.class == Movie
       puts idea.title
       directions = "You should see "

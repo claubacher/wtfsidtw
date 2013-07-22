@@ -10,6 +10,6 @@ class Concert < ActiveRecord::Base
 	end
 
 	def photo
-		http://upload.wikimedia.org/wikipedia/commons/4/4e/Justice_in_concert.jpg
+		"http://upload.wikimedia.org/wikipedia/commons/4/4e/Justice_in_concert.jpg"
 	end
 end
