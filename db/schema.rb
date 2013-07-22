@@ -23,14 +23,14 @@ ActiveRecord::Schema.define(:version => 20130721225538) do
   create_table "deals", :force => true do |t|
     t.string   "location"
     t.string   "title"
-    t.string   "pitch_html"
+    t.text     "pitch_html"
     t.string   "deal_url"
     t.string   "redemption_location"
     t.string   "large_image_url"
     t.datetime "starts_at"
-    t.string   "deal_types"
-    t.string   "tags"
-    t.string   "option_array"
+    t.text     "deal_types"
+    t.text     "tags"
+    t.text     "option_array"
     t.string   "announcement_title"
     t.datetime "end_date"
     t.datetime "created_at",          :null => false

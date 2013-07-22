@@ -8,9 +8,9 @@ class CreateDeals < ActiveRecord::Migration
       deal.string :redemption_location
       deal.string :large_image_url
       deal.datetime :starts_at
-      deal.string :deal_types
-      deal.string :tags
-      deal.string :option_array
+      deal.text :deal_types
+      deal.text :tags
+      deal.text :option_array
       deal.string :announcement_title
       deal.datetime :end_date
       deal.timestamps

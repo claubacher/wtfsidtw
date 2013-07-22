@@ -31,11 +31,7 @@ groupon = open('http://api.groupon.com/v2/deals.json?client_id=69481c71e6487f01a
 
 songkick = open('http://api.songkick.com/api/3.0/metro_areas/9426/calendar.json?page=2&apikey=hZ2Fewy4geaBhLCS')
 concerts = JSON.parse(songkick.read)
-p concerts['resultsPage']['results']['event'][0]['venue']['displayName']
-p concerts['resultsPage']['results']['event'][0]['venue']['metroArea']['displayName']
-p concerts['resultsPage']['results']['event'][0]['venue']['metroArea']['state']['displayName']
 concerts['resultsPage']['results']['event'].each do |concert|
-  p concert['type']
 	Concert.create(:kind => concert['type'],
 								 :artists => concert['performance'].map { |perf| perf['displayName'] }.join(', '),
 								 :location => concert['venue']['displayName'] + ", " + concert['venue']['metroArea']['displayName'] + ", " + concert['venue']['metroArea']['state']['displayName'],
