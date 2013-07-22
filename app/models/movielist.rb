@@ -10,7 +10,7 @@ class Movielist
                    :runtime => movie["runtime"],
                    :critics_score => movie["ratings"]["critics_score"],
                    :audience_score => movie["ratings"]["audience_score"],
-                   :poster => movie["posters"]["detailed"],
+                   :poster => movie["posters"]["original"],
                    :cast => movie["abridged_cast"].map { |actor| actor["name"] }.join(", "),
                    :link => movie["links"]["alternate"])
     end
