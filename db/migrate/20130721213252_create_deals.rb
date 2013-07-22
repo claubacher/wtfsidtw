@@ -3,7 +3,7 @@ class CreateDeals < ActiveRecord::Migration
     create_table :deals do |deal|
       deal.string :location
       deal.string :title
-      deal.string :pitch_html
+      deal.text :pitch_html
       deal.string :deal_url
       deal.string :redemption_location
       deal.string :large_image_url
