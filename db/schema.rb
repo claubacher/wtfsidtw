@@ -23,18 +23,18 @@ ActiveRecord::Schema.define(:version => 20130721225538) do
   create_table "deals", :force => true do |t|
     t.string   "location"
     t.string   "title"
-    t.text     "pitch_html"
-    t.string   "deal_url"
-    t.string   "redemption_location"
+    t.text     "pitchHtml"
+    t.string   "dealUrl"
+    t.string   "redemptionLocation"
     t.string   "large_image_url"
-    t.datetime "starts_at"
-    t.text     "deal_types"
+    t.datetime "startsAt"
+    t.text     "dealTypes"
     t.text     "tags"
-    t.text     "option_array"
-    t.string   "announcement_title"
-    t.datetime "end_date"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.text     "optionArray"
+    t.string   "announcementTitle"
+    t.datetime "endDate"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "movies", :force => true do |t|
