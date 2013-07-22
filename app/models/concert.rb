@@ -2,7 +2,7 @@ class Concert < ActiveRecord::Base
 	attr_accessible :kind, :artists, :location, :url
 
 	def description
-		self.kind + " @" + self.location + " featuring " + self.artists + ".  <a href=\"" + self.url + "\">Click Here to find out more.</a>"
+		self.kind + " @" + self.location + " featuring " + self.artists + ".  <a href=\"" + self.url + "\">Click here to find out more</a>"
 	end
 
 	def title
