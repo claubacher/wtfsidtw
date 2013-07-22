@@ -15,7 +15,11 @@ class Movie < ActiveRecord::Base
     rescue
       data = nil
     end
-    data ? Hash.from_xml(data.read)["trailers"]["trailer"]["embed_standard"] : nil
+    if data 
+      return Hash.from_xml(data.read)["trailers"]["trailer"]["embed_standard"] 
+    else 
+      return nil
+    end
   end
 
   def photo
