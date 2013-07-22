@@ -19,7 +19,7 @@ groupon = open('http://api.groupon.com/v2/deals.json?client_id=69481c71e6487f01a
       pitchHtml: deal["pitchHtml"],
       dealUrl: deal['dealUrl'],
       redemptionLocation: deal["redemptionLocation"],
-      large_image_url: deal["largeImageUrl"].sub("https", "http"),
+      large_image_ur: deal["largeImageUrl"].sub("https", "http"),
       startsAt: deal["startAt"],
       dealTypes: deal["dealTypes"],
       tags: deal['tags'].map(&:values).join(" "),
