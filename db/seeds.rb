@@ -26,6 +26,11 @@ groupon = open('http://api.groupon.com/v2/deals.json?client_id=69481c71e6487f01a
       option_array: deal["options"],
       announcement_title: deal['announcementTitle'],
       end_date: deal['endAt'])
+      puts
+      puts
+      puts deal["largeImageUrl"]
+      puts
+      puts
     end
   end
 
