@@ -24,7 +24,7 @@ class Deal < ActiveRecord::Base
   #   self.end_date = deal['endAt']
   # end
   def photo
-    large_image_url
+    large_image_url.to_s
   end
 
   def description
