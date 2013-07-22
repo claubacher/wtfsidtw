@@ -6,7 +6,7 @@ class CreateDeals < ActiveRecord::Migration
       deal.text :pitchHtml
       deal.string :dealUrl
       deal.string :redemptionLocation
-      deal.string :largeImageUrl
+      deal.string :large_image_url
       deal.datetime :startsAt
       deal.text :dealTypes
       deal.text :tags
