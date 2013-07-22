@@ -9,10 +9,6 @@ class Movie < ActiveRecord::Base
     "Cast: " + cast + "<br>"
   end
 
-  def link
-    self.link
-  end
-
   def trailer
     begin
       data = open('http://simpleapi.traileraddict.com/trailer/' + title.downcase.gsub(" ", "-") + '/trailer')
@@ -25,9 +21,4 @@ class Movie < ActiveRecord::Base
   def photo
     self.poster
   end
-
 end
-
-# class YoutubeVideo
-
-#   def initialize(search_term)

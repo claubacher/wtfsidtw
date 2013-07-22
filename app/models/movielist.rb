@@ -11,7 +11,8 @@ class Movielist
                    :critics_score => movie["ratings"]["critics_score"],
                    :audience_score => movie["ratings"]["audience_score"],
                    :poster => movie["posters"]["detailed"],
-                   :cast => movie["abridged_cast"].map { |actor| actor["name"] }.join(", "))
+                   :cast => movie["abridged_cast"].map { |actor| actor["name"] }.join(", "),
+                   :link => movie["links"]["alternate"])
     end
   end
 end
