@@ -21,10 +21,7 @@ class ApplicationController < ActionController::Base
 
   def text
     @from_number = params["From"]
-    redirect_to :action => "message"
-  end
-
-  def message
+  
     @idea = [Movie.all.sample, Deal.all.sample, Concert.all.sample].sample
     if @idea.class == Movie
       @directions = "You should see "
