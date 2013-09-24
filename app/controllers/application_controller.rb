@@ -1,11 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  twilio_account_sid = ENV['TWILIO_ACCOUNT_SID']
-  twilio_auth_token = ENV['TWILIO_AUTH_TOKEN']
-
-  @client = Twilio::REST::Client.new twilio_account_sid, twilio_auth_token
-
 	def index
 	end
 
@@ -43,7 +38,12 @@ class ApplicationController < ActionController::Base
   end
 
   def message
-    @client.account.messages.create(
+    twilio_account_sid = ENV['TWILIO_ACCOUNT_SID']
+    twilio_auth_token = ENV['TWILIO_AUTH_TOKEN']
+
+    client = Twilio::REST::Client.new twilio_account_sid, twilio_auth_token
+
+    client.account.messages.create(
       :from => '+18153454239',
       :to => @from_number,
       :body => "#{directions} #{idea.title} #{link}",
