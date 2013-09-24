@@ -20,6 +20,12 @@ class ApplicationController < ActionController::Base
 	end
 
   def text
+    @from_number = params{"From"}
+
+    redirect_to :action => "message"
+  end
+
+  def message
     @idea = [Movie.all.sample, Deal.all.sample, Concert.all.sample].sample
     if @idea.class == Movie
       @directions = "You should see "
@@ -31,13 +37,7 @@ class ApplicationController < ActionController::Base
       @directions = "You should see "
       @link = @idea.url
     end
-
-    @from_number = params{"From"}
-
-    redirect_to :action => "message"
-  end
-
-  def message
+    
     twilio_account_sid = ENV['TWILIO_ACCOUNT_SID']
     twilio_auth_token = ENV['TWILIO_AUTH_TOKEN']
 
