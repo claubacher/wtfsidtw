@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 	end
 
   def text
-    @from_number = params["From"]
+    FROM_NUMBER = params["From"]
     puts @from_number
     redirect_to :action => "message"
   end
@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
       @directions = "You should see "
       @link = @idea.url
       @title = @idea.title
-      index = @title.index(',') - 1
+      index = @title.index(',')
       @title = @title[0, index]
     end
 
@@ -50,7 +50,7 @@ class ApplicationController < ActionController::Base
 
     client.account.messages.create(
       :from => '+18153454239',
-      :to =>  '+18158612021',
+      :to =>  FROM_NUMBER,
       :body => "#{@directions}#{@title} #{@link}",
     )
   end
