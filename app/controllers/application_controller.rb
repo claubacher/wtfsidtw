@@ -28,9 +28,9 @@ class ApplicationController < ActionController::Base
       @directions = "You should see "
     end
 
-    TWILIO_ACCOUNT_SID = ENV['TWILIO_ACCOUNT_SID']
-    TWILIO_AUTH_TOKEN = ENV['TWILIO_AUTH_TOKEN']
-    TWILIO_NUMBER = ENV['TWILIO_NUMBER']
+    # TWILIO_ACCOUNT_SID = ENV['TWILIO_ACCOUNT_SID']
+    # TWILIO_AUTH_TOKEN = ENV['TWILIO_AUTH_TOKEN']
+    # TWILIO_NUMBER = ENV['TWILIO_NUMBER']
 
     # client = Twilio::REST::Client.new TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN
 
