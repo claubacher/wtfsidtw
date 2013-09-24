@@ -37,10 +37,7 @@ class ApplicationController < ActionController::Base
     client = Twilio::REST::Client.new twilio_account_sid, twilio_auth_token
 
     response = Twilio::TwiML::Response.new do |r|
-      r.Message do |m|
-        m.Media = @idea.photo
-        m.Body = "#{@directions} #{@idea.title} #{@link}"
-      end
+      r.Message "#{@directions} #{@idea.title} #{@link}"
     end
 
     content_type :xml
