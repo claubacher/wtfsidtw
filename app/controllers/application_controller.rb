@@ -40,7 +40,6 @@ class ApplicationController < ActionController::Base
       r.Message "#{@directions} #{@idea.title} #{@link}"
     end
 
-    content_type :xml
     response.text
   end
 end
