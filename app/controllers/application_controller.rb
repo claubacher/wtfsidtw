@@ -47,7 +47,6 @@ class ApplicationController < ActionController::Base
       :from => '+18153454239',
       :to =>  '+18158612021',
       :body => "#{@directions} #{@idea.title} #{@link}",
-      :media_url => @idea.photo,
     )
   end
 end
