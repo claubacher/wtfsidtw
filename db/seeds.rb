@@ -7,7 +7,7 @@ city_data['divisions'].each do |city|
   city_ids << city['id']
 end
 
-groupon = open('http://api.groupon.com/v2/deals.json?client_id=69481c71e6487f01ac963838804ee201cd5efcc9&division_id=chicago')
+groupon = open('http://api.groupon.com/v2/deals.json?client_id=69481c71e6487f01ac963838804ee201cd5efcc9&division_id=san-francisco')
 
   data = JSON.parse(groupon.read)
   data['deals'].each do |deal|
@@ -29,7 +29,7 @@ groupon = open('http://api.groupon.com/v2/deals.json?client_id=69481c71e6487f01a
     end
   end
 
-songkick = open('http://api.songkick.com/api/3.0/metro_areas/9426/calendar.json?page=2&apikey=hZ2Fewy4geaBhLCS')
+songkick = open('http://api.songkick.com/api/3.0/metro_areas/26330/calendar.json?&apikey=hZ2Fewy4geaBhLCS')
 concerts = JSON.parse(songkick.read)
 concerts['resultsPage']['results']['event'].each do |concert|
 	Concert.create(:kind => concert['type'],
