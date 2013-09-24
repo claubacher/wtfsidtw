@@ -14,7 +14,7 @@ groupon = open('http://api.groupon.com/v2/deals.json?client_id=69481c71e6487f01a
     tags = deal['tags'].map(&:values).join(" ")
     if GROUPON_PARENT_TAGS.include? tags
       Deal.create(
-      location: 'chicago',
+      location: 'san-francisco',
       title: deal["title"],
       pitchHtml: deal["pitchHtml"],
       dealUrl: deal['dealUrl'],
