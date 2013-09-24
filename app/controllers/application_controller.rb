@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
     twilio_account_sid = ENV['TWILIO_ACCOUNT_SID']
     twilio_auth_token = ENV['TWILIO_AUTH_TOKEN']
 
-    client = Twilio::REST::Client.new TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN
+    client = Twilio::REST::Client.new twilio_account_sid, twilio_auth_token
 
     response = Twilio::TwiML::Response.new do |r|
       r.Message do |m|
