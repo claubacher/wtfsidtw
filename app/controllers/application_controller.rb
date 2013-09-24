@@ -1,5 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+
+  twilio_account_sid = ENV['TWILIO_ACCOUNT_SID']
+  twilio_auth_token = ENV['TWILIO_AUTH_TOKEN']
+
+  client = Twilio::REST::Client.new twilio_account_sid, twilio_auth_token
+
 	def index
 	end
 
@@ -19,22 +25,17 @@ class ApplicationController < ActionController::Base
 	end
 
   def text
-    @idea = [Movie.all.sample, Deal.all.sample, Concert.all.sample].sample
-    if @idea.class == Movie
-      @directions = "You should see "
-      @link = @idea.link
-    elsif @idea.class == Deal
-      @directions = "You should sign up for "
-      @link = @idea.deal_url
-    elsif @idea.class == Concert
-      @directions = "You should see "
-      @link = @idea.url
+    idea = [Movie.all.sample, Deal.all.sample, Concert.all.sample].sample
+    if idea.class == Movie
+      directions = "You should see "
+      link = idea.link
+    elsif idea.class == Deal
+      directions = "You should sign up for "
+      link = idea.deal_url
+    elsif idea.class == Concert
+      directions = "You should see "
+      link = idea.url
     end
-
-    twilio_account_sid = ENV['TWILIO_ACCOUNT_SID']
-    twilio_auth_token = ENV['TWILIO_AUTH_TOKEN']
-
-    client = Twilio::REST::Client.new twilio_account_sid, twilio_auth_token
 
     response = Twilio::TwiML::Response.new do |r|
       r.Say 'Hello there! You have successfully configured a web hook.'
