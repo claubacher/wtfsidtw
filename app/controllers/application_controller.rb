@@ -37,12 +37,11 @@ class ApplicationController < ActionController::Base
     client = Twilio::REST::Client.new twilio_account_sid, twilio_auth_token
 
     response = Twilio::TwiML::Response.new do |r|
-      r.Message do |m|
-        m.Media = @idea.photo
-        m.Body = "#{@directions} #{@idea.title} #{@link}"
-      end
+      r.Say 'Hello there! You have successfully configured a web hook.'
+      r.Say 'Good luck on your Twilio quest!', :voice => 'woman'
     end
 
+    # Render an XML (TwiML) document
     content_type :xml
     response.text
   end
