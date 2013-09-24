@@ -18,21 +18,21 @@ class ApplicationController < ActionController::Base
 		render :partial => "wtf/testing", :locals => { :idea => idea, :directions => directions }
 	end
 
-  # def text
-  #   @idea = [Movie.all.sample, Deal.all.sample, Concert.all.sample].sample
-  #   if @idea.class == Movie
-  #     @directions = "You should see "
-  #   elsif @idea.class == Deal
-  #     @directions = "You should sign up for "
-  #   elsif @idea.class == Concert
-  #     @directions = "You should see "
-  #   end
+  def text
+    @idea = [Movie.all.sample, Deal.all.sample, Concert.all.sample].sample
+    if @idea.class == Movie
+      @directions = "You should see "
+    elsif @idea.class == Deal
+      @directions = "You should sign up for "
+    elsif @idea.class == Concert
+      @directions = "You should see "
+    end
 
-  #   TWILIO_ACCOUNT_SID = ENV['TWILIO_ACCOUNT_SID']
-  #   TWILIO_AUTH_TOKEN = ENV['TWILIO_AUTH_TOKEN']
-  #   TWILIO_NUMBER = ENV['TWILIO_NUMBER']
+    TWILIO_ACCOUNT_SID = ENV['TWILIO_ACCOUNT_SID']
+    TWILIO_AUTH_TOKEN = ENV['TWILIO_AUTH_TOKEN']
+    TWILIO_NUMBER = ENV['TWILIO_NUMBER']
 
-  #   client = Twilio::REST::Client.new TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN
+    client = Twilio::REST::Client.new TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN
 
   #   response = Twilio::TwiML::Response.new do |r|
   #     r.Message do |m|
