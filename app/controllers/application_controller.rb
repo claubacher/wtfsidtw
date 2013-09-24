@@ -21,7 +21,6 @@ class ApplicationController < ActionController::Base
 
   def text
     FROM_NUMBER = params["From"]
-    puts @from_number
     redirect_to :action => "message"
   end
 
