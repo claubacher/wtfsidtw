@@ -50,7 +50,7 @@ class ApplicationController < ActionController::Base
 
     client.account.messages.create(
       :from => '+18153454239',
-      :to =>  FROM_NUMBER,
+      :to =>  '+18158612021',
       :body => "#{@directions}#{@title} #{@link}",
     )
   end
