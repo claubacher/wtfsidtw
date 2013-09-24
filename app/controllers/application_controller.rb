@@ -31,16 +31,16 @@ class ApplicationController < ActionController::Base
     twilio_account_sid = ENV['TWILIO_ACCOUNT_SID']
     twilio_auth_token = ENV['TWILIO_AUTH_TOKEN']
 
-    # client = Twilio::REST::Client.new TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN
+    client = Twilio::REST::Client.new TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN
 
-  #   response = Twilio::TwiML::Response.new do |r|
-  #     r.Message do |m|
-  #       m.Media = @idea.photo
-  #       m.Body = "@{directions} #{@idea.title} #{idea.link}"
-  #     end
-  #   end
+    response = Twilio::TwiML::Response.new do |r|
+      r.Message do |m|
+        m.Media = @idea.photo
+        m.Body = "@{directions} #{@idea.title} #{idea.link}"
+      end
+    end
 
-  #   content_type :xml
-  #   response.text
+    content_type :xml
+    response.text
   end
 end
