@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 	end
 
   def text
-    FROM_NUMBER = params["From"]
+    @from_number = params["From"]
     redirect_to :action => "message"
   end
 
