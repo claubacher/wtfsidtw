@@ -22,10 +22,13 @@ class ApplicationController < ActionController::Base
     @idea = [Movie.all.sample, Deal.all.sample, Concert.all.sample].sample
     if @idea.class == Movie
       @directions = "You should see "
+      @link = @idea.link
     elsif @idea.class == Deal
       @directions = "You should sign up for "
+      @link = @idea.deal_url
     elsif @idea.class == Concert
       @directions = "You should see "
+      @link = @idea.url
     end
 
     twilio_account_sid = ENV['TWILIO_ACCOUNT_SID']
