@@ -20,16 +20,16 @@ class ApplicationController < ActionController::Base
 	end
 
   def text
-    idea = [Movie.all.sample, Deal.all.sample, Concert.all.sample].sample
-    if idea.class == Movie
-      directions = "You should see "
-      link = idea.link
-    elsif idea.class == Deal
-      directions = "You should sign up for "
-      link = idea.deal_url
-    elsif idea.class == Concert
-      directions = "You should see "
-      link = idea.url
+    @idea = [Movie.all.sample, Deal.all.sample, Concert.all.sample].sample
+    if @idea.class == Movie
+      @directions = "You should see "
+      @link = @idea.link
+    elsif @idea.class == Deal
+      @directions = "You should sign up for "
+      @link = @idea.deal_url
+    elsif @idea.class == Concert
+      @directions = "You should see "
+      @link = @idea.url
     end
 
     @from_number = params{"From"}
@@ -46,8 +46,8 @@ class ApplicationController < ActionController::Base
     client.account.messages.create(
       :from => '+18153454239',
       :to => @from_number,
-      :body => "#{directions} #{idea.title} #{link}",
-      :media_url => idea.photo,
+      :body => "#{@directions} #{@idea.title} #{@link}",
+      :media_url => @idea.photo,
     )
   end
 end
