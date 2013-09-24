@@ -43,6 +43,6 @@ class ApplicationController < ActionController::Base
 
     # Render an XML (TwiML) document
     content_type :xml
-    response.text
+    # response.text
   end
 end
