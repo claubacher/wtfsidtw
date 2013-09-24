@@ -37,13 +37,6 @@ class ApplicationController < ActionController::Base
       link = idea.url
     end
 
-    response = Twilio::TwiML::Response.new do |r|
-      r.Say 'Hello there! You have successfully configured a web hook.'
-      r.Say 'Good luck on your Twilio quest!', :voice => 'woman'
-    end
-
-    # Render an XML (TwiML) document
-    content_type :xml
-    # response.text
+    @from_number = params{"From"}
   end
 end
