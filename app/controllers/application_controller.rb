@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
     response = Twilio::TwiML::Response.new do |r|
       r.Message do |m|
         m.Media = @idea.photo
-        m.Body = "{@directions} #{@idea.title} #{@link}"
+        m.Body = "#{@directions} #{@idea.title} #{@link}"
       end
     end
 
