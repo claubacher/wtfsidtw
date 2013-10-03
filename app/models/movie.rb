@@ -11,7 +11,7 @@ class Movie < ActiveRecord::Base
 
   def trailer
     begin
-      data = open('http://simpleapi.traileraddict.com/trailer/' + title.downcase.gsub(" ", "-") + '/trailer')
+      data = open('http://simpleapi.traileraddict.com/trailer/' + title.downcase.gsub(" ", "-").gsub("'", "").gsub(":", "") + '/trailer')
     rescue
       data = nil
     end
